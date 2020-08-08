@@ -12,8 +12,7 @@ class Bike
     end
   end
   def not_working
-    # @status = "not working"
-    "not working"
+    @status = "not working"
   end 
 end
 
