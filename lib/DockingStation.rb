@@ -2,8 +2,9 @@ class DockingStation
   attr_reader :bikes
   CAPACITY = 20
 
-  def initialize()
+  def initialize(capacity: CAPACITY)
     @bikes = []
+    @capacity = capacity
   end
 
   def dock(bike)
@@ -18,7 +19,7 @@ class DockingStation
 
   private
   def full?
-    bikes.length >= CAPACITY
+    bikes.length >= @capacity
   end
 
   def empty?

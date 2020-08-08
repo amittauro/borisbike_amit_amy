@@ -6,3 +6,4 @@ require './lib/Bike.rb'
 
 # Test files here
 require './specs/DockingStationSpec.rb'
+require './specs/BikeSpec.rb'
