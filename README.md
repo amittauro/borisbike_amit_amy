@@ -30,6 +30,11 @@ As a system maintainer,
 So that I can manage broken bikes and not disappoint users,
 I’d like docking stations not to release broken bikes.
 
+object | messages | scenario
+docking station | release(no arg) (string) | no working bikes
+docking station | release(no arg) (string) | some working bikes
+bike | working
+
 As a system maintainer,
 So that I can manage broken bikes and not disappoint users,
 I’d like docking stations to accept returning bikes (broken or not).

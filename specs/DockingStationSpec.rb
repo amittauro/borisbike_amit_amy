@@ -80,3 +80,40 @@ expected = "Sorry,full"
 check_result(expected, result)
 end
 
+# As a system maintainer,
+# So that I can manage broken bikes and not disappoint users,
+# I’d like docking stations not to release broken bikes.
+# it releases a working bike if there is one available
+# it gives a helpful message if none is available
+
+it 'does not release a broken bike' do
+  #setup and execute
+  docking_station = DockingStation.new
+  bike = Bike.new
+  bike.not_working
+  docking_station.dock(bike)
+
+  #execute
+  result = docking_station.release
+  expected = nil
+
+  #verify
+  check_result(expected, result)
+end
+
+it 'releaes a working bike if there is one available' do
+  #setup and execute
+  docking_station = DockingStation.new
+  working_bike = Bike.new
+  broken_bike = Bike.new
+  broken_bike.not_working
+  docking_station.dock(working_bike)
+  docking_station.dock(broken_bike)
+
+  #execute
+  result = docking_station.release
+  expected = working_bike
+
+  #verify
+  check_result(expected, result)
+end

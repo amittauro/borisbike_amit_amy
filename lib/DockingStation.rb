@@ -13,8 +13,13 @@ class DockingStation
   end
 
   def release
-      return "Sorry there are none" if empty?
-      bikes.pop
+    return "Sorry there are none" if empty?
+    bikes.each do |bike|
+      if bike.working
+        return bike
+      end
+    end
+    nil
   end
 
   private
